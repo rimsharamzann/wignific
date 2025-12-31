@@ -1,298 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<style>
-			/*Section 10*/
-
-			.comparison-section {
-				margin: 0px auto;
-
-				padding: 48px 170px 48px 170px;
-
-				text-align: center;
-			}
-
-			h1 {
-				font-size: 42px;
-
-				font-family: 'Recoleta Alt';
-
-				font-weight: 500;
-
-				line-height: 130%;
-
-				margin-bottom: 100px;
-			}
-
-			.table-scroll {
-				width: 1100px;
-
-				margin: 0 auto 150px;
-			}
-
-			/* ===== GRID ===== */
-
-			.compare-grid {
-				display: grid;
-
-				grid-template-columns: 228px 228px 228px 228px;
-
-				width: 912px;
-
-				border-radius: 20px;
-
-				position: relative;
-
-				overflow: visible;
-
-				margin: 0 auto;
-			}
-
-			/* ===== CELLS ===== */
-
-			.g-cell {
-				width: 228px;
-
-				min-width: 228px;
-
-				max-width: 228px;
-
-				background: #efe4f2;
-
-				padding: 14px;
-
-				display: flex;
-
-				align-items: center;
-
-				justify-content: center;
-
-				font-size: 14px;
-
-				line-height: 140%;
-
-				font-family: 'DM Sans';
-
-				color: #280b2f;
-
-				box-sizing: border-box;
-
-				position: relative;
-
-				z-index: 2;
-
-				/* 🔥 GRID LINES */
-
-				border-right: 0.8px solid #cfb3d6;
-
-				border-bottom: 0.8px solid #cfb3d6;
-			}
-
-			/* remove right border last column */
-
-			.g-cell.two {
-				border-top-right-radius: 16px;
-
-				border-top: 0.8px solid #cfb3d6;
-			}
-
-			/* remove bottom border last row */
-
-			.g-cell.three {
-				border-top: 0.8px solid #cfb3d6;
-			}
-
-			/* ===== FEATURE COLUMN ===== */
-
-			.feature {
-				justify-content: flex-start;
-
-				text-align: left;
-
-				font-weight: 500;
-
-				border-left: 0.8px solid #cfb3d6;
-			}
-
-			.first {
-				border-top-left-radius: 16px;
-
-				border-top: 0.8px solid #cfb3d6;
-
-				border-left: 0.8px solid #cfb3d6;
-			}
-
-			/* ===== HEADERS ===== */
-
-			.g-head {
-				font-size: 16px;
-
-				font-weight: 500;
-
-				line-height: 140%;
-
-				background: #f8f4f9;
-
-				border-bottom: none; /* ❌ no line under headings */
-			}
-
-			.g-head:not(.ledisa-head) {
-				border-right: none; /* ❌ no lines between headings */
-			}
-
-			.g-empty {
-				background: #f8f4f9;
-
-				border: none;
-			}
-
-			/* ===== ICONS ===== */
-
-			.g-cell img {
-				width: 26px;
-
-				height: 26px;
-			}
-
-			/* ===== ROUNDED CORNERS ===== */
-
-			.last-cell {
-				border-bottom-left-radius: 16px;
-			}
-
-			.firt-cell {
-				border-bottom-right-radius: 16px;
-			}
-
-			/* ===== LEDISA COLUMN ===== */
-
-			.ledisa,
-			.ledisa-head {
-				background: transparent;
-
-				color: #fff;
-
-				z-index: 3;
-
-				border: none; /* no grid lines inside purple */
-			}
-
-			/* 🔥 CONTINUOUS PURPLE COLUMN */
-
-			.compare-grid::after {
-				content: '';
-
-				position: absolute;
-
-				top: -24px;
-
-				bottom: -24px;
-
-				left: 228px;
-
-				width: 228px;
-
-				background: linear-gradient(
-						180deg,
-						rgba(68, 19, 80, 0) 0%,
-						#721f85 100%
-					),
-					#441350;
-
-				border-radius: 32px;
-
-				z-index: 1;
-			}
-
-			/* Ledisa heading */
-
-			.ledisa-head {
-				font-size: 24px;
-
-				padding-top: 26px;
-
-				font-weight: 500;
-
-				font-family: 'Recoleta Alt';
-			}
-
-			/* white check bg */
-
-			.ledisa img {
-				background: #fff;
-
-				border-radius: 50%;
-
-				padding: 6px;
-			}
-
-			/*Section 10*/
-		</style>
-	</head>
-	<body>
-		<!-- Section 10 -->
-		<section class="comparison-section">
-			<h1>Give Yourself the Kind of Sleep People Brag About</h1>
-
-			<div class="table-scroll">
-				<div class="compare-grid">
-					<!-- HEADER ROW -->
-					<div class="g-cell g-empty"></div>
-					<div class="g-cell g-head ledisa-head">Ledisa</div>
-					<div class="g-cell g-head">Other Sleep Patches</div>
-					<div class="g-cell g-head">Oral Sleep Supplements</div>
-
-					<!-- ROW 1 -->
-					<div class="g-cell feature first">
-						Rapid Transdermal Absorption + Controlled Release
-					</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell three"><img src="img/close.png" /></div>
-					<div class="g-cell two"><img src="img/close.png" /></div>
-
-					<!-- ROW 2 -->
-					<div class="g-cell feature">Promotes full night sleep</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-
-					<!-- ROW 3 -->
-					<div class="g-cell feature">Promotes energized mornings</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-
-					<!-- ROW 4 -->
-					<div class="g-cell feature">Naturally sourced ingredients</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-
-					<!-- ROW 5 -->
-					<div class="g-cell feature">No drowsiness</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-
-					<!-- ROW 6 -->
-					<div class="g-cell feature">Non habit-forming</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-
-					<!-- ROW 7 -->
-					<div class="g-cell feature last-cell">No side effects</div>
-					<div class="g-cell ledisa"><img src="img/check.png" /></div>
-					<div class="g-cell"><img src="img/close.png" /></div>
-					<div class="g-cell firt-cell"><img src="img/close.png" /></div>
-				</div>
-			</div>
-
-			<a href="#" class="cta-btn">Try Risk Free, Get up to 70% Off</a>
-		</section>
-		<!-- Section 10 -->
-	</body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Navbar</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+
+.nav-wrapper{
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 12px;
+}
+
+.nav-bar{
+  display:flex;
+  align-items:center;
+  width:100%;
+}
+
+.nav-item,
+.step-arrow{
+  flex:1;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:16px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.nav-item{
+  background:white;
+}
+
+
+.badge{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:#e9e6e6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:700;
+}
+
+.nav-item.done .badge{
+  background:#28a745;
+  color:#fff;
+}
+
+.step-arrow{
+  position:relative;
+  background:#d60000;
+  color:#fff;
+  padding-left:36px;
+}
+
+.step-arrow::after{
+  content:"";
+  position:absolute;
+  right:-28px;
+  top:0;
+  width:0;
+  height:0;
+  border-top:28px solid transparent;
+  border-bottom:28px solid transparent;
+  border-left:28px solid #d60000;
+}
+
+.step-arrow::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:0;
+  height:0;
+  border-top:28px solid transparent;
+  border-bottom:28px solid transparent;
+  border-left:20px solid #fff;
+}
+
+.step-circle{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#fff;
+  color:#d60000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:480px){
+   .nav-item  :nth-child(2){ margin-left: 40px; }
+  .nav-item,
+  .step-arrow{
+    font-size:10px;
+    height:40px;
+    gap:4px; padding-bottom: 4px;
+     display: flex; flex-direction: column;
+     
+  }
+
+  .badge,
+  .step-circle{
+    width:16px;
+    height:16px; margin-top: 4px;
+    font-size:10px;
+  }
+
+  .step-arrow{ padding:  auto 10px;
+    padding-left:24px; margin-right: 10px;
+  }
+
+  .step-arrow::after{
+    right:-20px;
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+    border-left:20px solid #d60000;
+  }
+
+  .step-arrow::before{
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+    border-left:14px solid #fff;
+  }
+   .nav-wrapper{
+     gap: 10px;
+   }
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav-wrapper">
+  <div class="nav-bar">
+
+    <div class="nav-item done">
+      <span class="badge">✔</span>
+      ORDER INITIATED
+    </div>
+
+    <div class="step-arrow">
+      <span class="step-circle">2</span>
+      CUSTOMIZE ORDER
+    </div>
+
+    <div class="nav-item">
+      <span class="badge">3</span>
+      CONFIRMATION
+    </div>
+
+  </div>
+</div>
+
+</body>
 </html>

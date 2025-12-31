@@ -4,82 +4,25 @@
 	padding: 0px;
 	font-family: Arial, sans-serif;
 }
+p {
+	line-height: calc(1em + 4px);
+}
 
 body {
 	background: #f6f6f6;
 	margin: 0;
 	font-family: 'Open Sans', Arial, sans-serif;
+
+	display: flex;
+	justify-content: center;
 }
-
-
-.step-arrow {
-  position: relative;
-  background: #d60000;
-  color: #fff;
-  padding: 14px 20px 14px 40px; 
-  display: inline-flex;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Right arrow */
-.step-arrow::after {
-  content: "";
-  position: absolute;
-  right: -32px;
-  top: 0;
-  width: 0;
-  height: 0;
- 
-  border-top: 28px solid transparent;
-  border-bottom: 28px solid transparent;
-  border-left: 32px solid #d60000;
-}
-
-/* Left cut */
-.step-arrow::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-top: 28px solid transparent;
-  border-bottom: 28px solid transparent;
-  border-left: 32px solid white;
-}
-
-/* Circle number */
-.step-circle {
-  width: 28px;
-  height: 28px;
-  background: #fff;
-  color: #d60000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* Text */
-.step-text {
-  white-space: nowrap;
-}
-
-
 .container {
+	width: 100%;
 	max-width: 1000px;
 	background: #fff;
-	margin: auto;
-	padding: 0px 100px;
+	margin: 0 auto;
+	padding: 0 100px;
 	border: 2px solid #cbd5e0;
-	border-radius: 0px;
-	gap: 20px;
 }
 .bold {
 	font-weight: bold;
@@ -90,29 +33,6 @@ body {
 	margin: 40px auto;
 }
 
-/* nav-bar */
-.nav-bar {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 30px;
-	margin-top: 60px;
-	height: 48px;
-	gap: 10px;
-}
-
-.nav-item {
-	flex: 1;
-	padding: 12px;
-	font-size: 16px;
-	text-align: center;
-	font-weight: bold;
-	line-height: 100%;
-	
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px; white-space: nowrap; 
-}
 
 .title {
 	font-size: 36px;
@@ -122,46 +42,8 @@ body {
 	margin: 40px auto;
 }
 
-.badge-wrap {
-	position: relative;
-	display: inline-block;
-}
 
-.badge-wrap img {
-	height: 55px;
-	display: block;
-}
 
-.badge-content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	color: #fff;
-	font-weight: 700;
-	font-size: 16px;
-	white-space: nowrap;
-}
-
-.circle {
-	height: 24px;
-	width: 24px;
-	border-radius: 50%;
-	background: #fff;
-	color: #c40000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 13px;
-	font-weight: 700;
-}
-.nav-bar .nav-item:last-child .circle {
-	background: #e0e0e0;
-	color: #000;
-}
 
 .banner {
 	margin: 20px 0;
@@ -210,6 +92,13 @@ body {
 	flex: 1;
 }
 
+/* Desktop default */
+.desktop {
+	display: inline;
+}
+.mobile {
+	display: none;
+}
 /*  grid  */
 
 .comparison-table {
@@ -255,8 +144,14 @@ thead th.highlight .brand {
 	border-radius: 0;
 }
 
+.brand img {
+	height: 51px;
+	width: 51px; align-items: center; justify-content: center;
+}
+
 thead img {
-	width: 32px;
+	width: 40px;
+	height: 40px;
 	margin-bottom: 6px;
 }
 
@@ -266,7 +161,6 @@ thead span {
 	line-height: 120%;
 	margin-top: 4px;
 }
-
 
 th,
 td {
@@ -289,7 +183,6 @@ th:last-child {
 th:nth-child(2),
 td:nth-child(2) {
 	border-left: 2px solid #4da3ff;
-
 	border-right: 2px solid #4da3ff;
 	background: #e6f0ff;
 	font-weight: 700;
@@ -303,6 +196,11 @@ td.highlight {
 .comparison-table tbody tr:last-child td:nth-child(2) {
 	border-bottom: 2px solid #4da3ff;
 	background-color: #e6f0ff;
+}
+
+td:last-child,
+th:last-child {
+	border-right: none;
 }
 td.check img {
 	width: 18px;
@@ -328,7 +226,6 @@ td.cross img {
 	border-bottom-right-radius: 16px;
 }
 
-
 .comparison-table tbody tr:first-child td:first-child {
 	border-top-left-radius: 16px;
 	border-left: 1px solid #e5e5e5;
@@ -351,6 +248,10 @@ td.cross img {
 	border-top: 1px solid transparent;
 }
 
+.comparison-table tbody td:last-child {
+	border-right: none;
+}
+
 .comparison-table tbody tr:first-child td {
 	border-top: 1px solid white;
 }
@@ -371,7 +272,14 @@ td.cross img {
 	border-radius: 16px;
 	overflow: hidden;
 }
+ .brand img {
+	height: 34px;
+	width: 34px; align-items: center; justify-content: center;
+}
 
+.comparison-table {
+	border: none;
+}
 
 /* ...................... Wagnific steps */
 .steps-section {
@@ -389,8 +297,8 @@ td.cross img {
 
 .step img {
 	width: 30%;
-	height: auto;
-	object-fit: contain;
+	height: auto; align-self: flex-start;
+	object-fit: contain; align-items: start;
 }
 
 .step-text {
@@ -409,8 +317,9 @@ td.cross img {
 	font-size: 20px;
 	font-weight: 400;
 	margin: 0;
-	line-height: 100%;
+	line-height: 130%;
 	margin-bottom: 24px;
+	color: #333;
 }
 .step-list {
 	list-style-type: disc;
@@ -461,7 +370,7 @@ td.cross img {
 	position: relative;
 }
 
-.card img {
+.card img { align-items: center;
 	margin-bottom: 20px;
 }
 
@@ -500,6 +409,7 @@ td.cross img {
 	background: transparent;
 	border-radius: 10px;
 	overflow: hidden;
+	margin-right: 16px;
 }
 
 /* image */
@@ -569,6 +479,7 @@ td.cross img {
 	font-weight: bold;
 	line-height: 100%;
 	text-align: center;
+	text-decoration: underline;
 	justify-content: center;
 	margin: 20px auto;
 }
@@ -609,7 +520,14 @@ td.cross img {
 /* Res[ponsive */
 @media (max-width: 480px) {
 	.container {
+		margin: auto 0;
 		padding: 0 16px;
+	}
+	body {
+		padding:0 16px;
+		justify-content: center;
+		display: flex;
+
 	}
 	.title {
 		font-size: 24px;
@@ -624,49 +542,17 @@ td.cross img {
 		line-height: 100%;
 		margin: 16px 0px;
 	}
-
-	/* NAV BAR */
-	.nav-bar {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 6px;
-		width: 100%;
-		margin: 20px 0;
-	}
-
-	.nav-item {
-		flex: 1;
-		padding: 6px 4px;
-		font-size: 10px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 4px;
-		white-space: nowrap;
-		text-align: center;
-	}
-
+	
 	.alert {
 		display: flex;
 		align-items: start;
 
 		padding: 16px;
 		height: 74px;
-		border-radius: 8px;
 		font-size: 16px;
-		background: #ffeeee;
 		font-weight: 400;
 	}
-
-	.badge-wrap {
-		width: 100%;
-		max-width: 136px;
-		height: 39px;
-		display: block;
-	}
-
+	
 	.badge-content {
 		display: flex;
 		flex-direction: column;
@@ -674,18 +560,23 @@ td.cross img {
 		font-size: 10px;
 		text-align: center;
 	}
-
+	thead th {
+		height: 65px;
+		font-size: 8px;
+	}
+	th span {
+		margin-bottom: 10px;
+		font-size: 8px;
+	}
+	.brand-title {
+		margin-bottom: 10px;
+	}
 	.circle {
 		width: 16px;
 		height: 16px;
+		padding: 8px;
 		font-size: 11px;
 	}
-
-	.nav-item img {
-		width: 16px;
-		height: 16px;
-	}
-
 	th {
 		font-size: 8px;
 		margin-bottom: 8px;
@@ -699,12 +590,10 @@ td.cross img {
 		gap: 16px;
 		flex-direction: column;
 	}
-
 	.reviews img {
 		width: 100%;
 		height: auto;
 	}
-
 	.steps-section {
 		display: flex;
 
@@ -726,7 +615,6 @@ td.cross img {
 
 	.step-text {
 		width: 100%;
-		/* gap: 16px; */
 	}
 
 	.step-title {
@@ -738,8 +626,8 @@ td.cross img {
 	.step-desc {
 		font-size: 16px;
 		font-weight: 400;
-		line-height: 100%;
-		color: #333;
+		line-height: 130%;
+		/* color: #333; */
 
 		margin: 10px auto;
 	}
@@ -772,19 +660,14 @@ td.cross img {
 
 	.guarante-text {
 		width: 100%;
-		gap: 10px;
-		margin-top: 16px;
 	}
 	.guarante-text p {
 		font-size: 14px;
 	}
 	.thanks-text {
 		font-size: 14px;
-		font-weight: bold;
 		line-height: 100%;
-		text-align: center;
-		justify-content: center;
-		margin: 20px;
+		margin: 40px;
 	}
 	.wagnific-family {
 		gap: 16px;
@@ -794,15 +677,13 @@ td.cross img {
 		font-size: 14px;
 	}
 	.footer {
+		margin-left: -32px;
+		margin-right: -32px;
 		height: 65px;
-
-		/* margin-left: -30px;
-	margin-right: -30px; */
 	}
 	.footer p {
 		font-size: 14px;
 	}
-	/*  */
 
 	.pricing-cards {
 		gap: 30px;
@@ -822,11 +703,159 @@ td.cross img {
 	}
 
 	.card h3 {
-		font-size: px32;
+		font-size: 32px;
 		margin-bottom: 16px;
 	}
-
 	.image-badge {
 		height: 73px;
+		margin-top: -10px;
+		margin-right: 16px;
 	}
+	.image-badge img {
+		border-top-left-radius: 10px;
+	}
+	.badge-content {
+		flex-direction: column;
+		gap: 4px;
+		font-size: 10px;
+		text-align: center;
+	}
+	.circle {
+		width: 16px;
+		height: 16px;
+		font-size: 11px;
+	}
+	
+}
+
+
+ 
+.nav-wrapper{
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 12px;
+}
+
+.nav-bar{
+  display:flex;
+  align-items:center;
+  width:100%;
+}
+
+.nav-item,
+.step-arrow{
+  flex:1;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:16px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.nav-item{
+  background:white;
+}
+
+
+.badge{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#e9e6e6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:700;
+}
+
+.nav-item.done .badge{
+  background:#28a745;
+  color:#fff;
+}
+
+.step-arrow{
+  position:relative;
+  background:#d60000;
+  color:#fff;
+  padding-left:36px;
+}
+
+.step-arrow::after{
+  content:"";
+  position:absolute;
+  right:-28px;
+  top:0;
+  width:0;
+  height:0;
+  border-top:28px solid transparent;
+  border-bottom:28px solid transparent;
+  border-left:28px solid #d60000;
+}
+
+.step-arrow::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:0;
+  height:0;
+  border-top:28px solid transparent;
+  border-bottom:28px solid transparent;
+  border-left:20px solid #fff;
+}
+
+.step-circle{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#fff;
+  color:#d60000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:700;
+}
+
+@media(max-width:480px){
+   .nav-item  :nth-child(2){ margin-left: 40px; }
+  .nav-item,
+  .step-arrow{
+    font-size:10px;
+    height:40px;
+    gap:4px; padding-bottom: 4px;
+     display: flex; flex-direction: column;
+     
+  }
+
+  .badge,
+  .step-circle{
+    width:16px;
+    height:16px; margin-top: 4px;
+    font-size:10px;
+  }
+
+  .step-arrow{ padding:  auto 10px;
+    padding-left:24px; margin-right: 10px;
+  }
+
+  .step-arrow::after{
+    right:-20px;
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+    border-left:20px solid #d60000;
+  }
+
+  .step-arrow::before{
+    border-top:20px solid transparent;
+    border-bottom:20px solid transparent;
+    border-left:14px solid #fff;
+  }
+   .nav-wrapper{
+     gap: 10px;
+   }
 }
