@@ -11,6 +11,67 @@ body {
 	font-family: 'Open Sans', Arial, sans-serif;
 }
 
+
+.step-arrow {
+  position: relative;
+  background: #d60000;
+  color: #fff;
+  padding: 14px 20px 14px 40px; 
+  display: inline-flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Right arrow */
+.step-arrow::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: 0;
+  width: 0;
+  height: 0;
+ 
+  border-top: 28px solid transparent;
+  border-bottom: 28px solid transparent;
+  border-left: 32px solid #d60000;
+}
+
+/* Left cut */
+.step-arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 28px solid transparent;
+  border-bottom: 28px solid transparent;
+  border-left: 32px solid white;
+}
+
+/* Circle number */
+.step-circle {
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  color: #d60000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Text */
+.step-text {
+  white-space: nowrap;
+}
+
+
 .container {
 	max-width: 1000px;
 	background: #fff;
